@@ -1,5 +1,5 @@
 <template>
-<v-navigation-drawe absolute temporary>
+<v-navigation-drawer v-model="$store.state.sideNavManage.drawer" absolute temporary>
 	<v-list>
 		<v-list-item>
 			<v-list-item-avatar>
@@ -21,7 +21,7 @@
 			</v-list-item-content>
 		</v-list-item>
 	</v-list>
-</v-navigation-drawe>
+</v-navigation-drawer>
 </template>
 
 
@@ -32,13 +32,13 @@ export default {
 	data () {
 		return {
 			items: [
-				{ title: 'To BUY', icon: 'mdi-basket', link: { name: 'toBuy' } },
+				{ title: 'To BUY', icon: 'mdi-basket', link: { name: 'tobuy' } },
 				{ title: 'Recipe', icon: 'mdi-pasta', link: { name: 'recipe' } },
 			]
 		}
 	},
 	computed: {
-		...mapGetters(['userName', 'photoURL'])
+		...mapGetters('userManage', ['userName', 'photoURL'])
 	}
 }
 </script>
